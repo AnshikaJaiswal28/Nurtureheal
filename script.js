@@ -1,20 +1,13 @@
-function calculateFactorial() {
-    const numberInput = document.getElementById('numberInput');
-    const resultElement = document.getElementById('result');
-    const outputElement = document.getElementById('output');
-    const number = parseInt(numberInput.value);
 
-    if (isNaN(number) || number < 0 || !Number.isInteger(number)) {
-        resultElement.textContent = 'Please enter a non-negative integer.';
-        outputElement.textContent = '';
-        return;
+function factorial(){
+    var n = document.getElementById("num").value;
+    var i, f=1;
+    if(n<0){
+        document.getElementById("fact").innerHTML = "Input positive number";
     }
-
-    let factorial = 1;
-    for (let i = 1; i <= number; i++) {
-        factorial *= i;
+    else{
+        for(i=1; i<=n; i++) f*=i;
+        document.getElementById("fact").innerHTML = f;
     }
-
-    resultElement.textContent = `The factorial of ${number} is:`;
-    outputElement.textContent = factorial;
+    
 }
